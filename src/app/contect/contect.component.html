@@ -1,0 +1,77 @@
+
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap">
+            <div class="container">
+                <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>California, United States</h6>
+                                <p>Santa monica bullevard</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">00 (440) 9865 562</a></h6>
+                                <p>Mon to Fri 9am to 6 pm</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">support@colorlib.com</a></h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-9">
+                        <form  [formGroup]="contactForm" (ngSubmit)="save_contact_form()">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="name" id="name" name="name" placeholder="Enter your name" [ngClass]="{ 'is-invalid': submitted && myForm.name.errors }" placeholder="Enter Name Here"
+                                    class="form-control" pInputText>
+                                    <div *ngIf="submitted && myForm.name.errors" class="invalid-feedback">
+                                        <div *ngIf="myForm.name.errors.required">Name is required</div>
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" formControlName="email" id="email" name="email" placeholder="Enter email address" [ngClass]="{ 'is-invalid': submitted && myForm.email.errors }" placeholder="Enter Email Here"
+                                    class="form-control" pInputText>
+                                    <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+                                        <div *ngIf="myForm.email.errors.required">Email is required</div>
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" formControlName="mobile_no" placeholder="Enter Mobile"  [ngClass]="{ 'is-invalid': submitted && myForm.mobile_no.errors }" placeholder="Enter Mobile No Here"
+                                    class="form-control" pInputText>
+                                    <div *ngIf="submitted && myForm.mobile_no.errors" class="invalid-feedback">
+                                        <div *ngIf="myForm.mobile_no.errors.required">Mobile_no is required</div>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea [ngClass]="{ 'is-invalid': submitted && myForm.message.errors }" placeholder="Enter Message Here"
+                                    class="form-control" formControlName="message" pInputText></textarea>
+                                    <div *ngIf="submitted && myForm.message.errors" class="invalid-feedback">
+                                        <div *ngIf="myForm.message.errors.required">Name is required</div>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" value="submit" class="btn btn-info">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+        
+      

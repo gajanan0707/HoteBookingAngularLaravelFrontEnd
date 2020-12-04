@@ -1,0 +1,111 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="/">HMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/gallary">Gallary</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/room-booking-request">Room Booking</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/blog">Blog</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/contact">Contact</a>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/feedback">Feedback</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" routerLink="/about">About</a>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" *ngIf="isLogin" routerLink="/bookingStatus">My Booking</a>
+            <a class="dropdown-item" *ngIf="!isLogin" routerLink="/login">Login</a>
+            <a class="dropdown-item" *ngIf="!isLogin" routerLink="/signup">Singup</a>
+            <a class="dropdown-item" *ngIf="isLogin" [routerLink] (click)='logout()'>Logout</a>
+          </div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+  <div class="page_container">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-sm-4 subscribe_box">
+        <p class="footer_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+          has been the industry's standard dummy text ever since the 1500s</p>
+        <h4 class="footer_text">For Letest Update Subscribe Now</h4>
+        <form [formGroup]="subscribeForm" (ngSubmit)="subscribeuser()">
+          <input type="email" name="email" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && myForm.email.errors }" placeholder="Enter Email Here"
+            class="form-control" pInputText />
+          <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+            <div *ngIf="myForm.email.errors.required">email is required</div>
+          </div>
+          <button class="btn btn-info mt-2 mb-2">Subscribe</button>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <h4 class="text-center mt-4 mb-4 footer_text">Contact Information</h4>
+        <table>
+          <tr>
+            <td class="contect_tab footer_text">E-Mail</td>
+            <td class="contect_tab footer_text">example@gmail.com</td>
+          </tr>
+          <tr>
+            <td class="contect_tab footer_text">Mobile No</td>
+            <td class="contect_tab footer_text">999999999</td>
+          </tr>
+          <tr>
+            <td class="contect_tab footer_text">Address</td>
+            <td class="contect_tab footer_text">Your Address</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-sm-4">
+        <div class="social_link_box">
+          <div class="social_icons"><i class="fa fa-facebook"></i></div>
+          <div class="social_icons"><i class="fa fa-google-plus"></i></div>
+          <div class="social_icons"><i class="fa fa-youtube"></i></div>
+          <div class="social_icons"><i class="fa fa-twitter"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

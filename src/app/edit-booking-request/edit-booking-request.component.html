@@ -1,0 +1,49 @@
+<div class="container">
+  <form (ngSubmit)="updateData()">
+    <div class="form-group">
+      <label>Customer Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="requestdata.name">
+    </div>
+
+    <div class="form-group">
+      <label>Customer Email</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="requestdata.email">
+    </div>
+
+    <div class="form-group">
+      <label>Customer Mobile_no</label>
+      <input type="text" class="form-control" name="mobile_no" [(ngModel)]="requestdata.mobile_no">
+    </div>
+
+    <div class="form-group">
+      <label>Customer Address</label>
+      <input type="text" class="form-control" name="address" [(ngModel)]="requestdata.address">
+    </div>
+
+    <div class="form-group">
+      <label>From Date</label>
+      <input type="date" name="from_date" class="form-control" [(ngModel)]="requestdata.from_date">
+    </div>
+
+    <div class="form-group">
+      <label>To Date</label>
+      <input type="date" class="form-control" name="to_date" [(ngModel)]="requestdata.to_date">
+    </div>
+
+    <div class="form-group">
+      <label>No Of Rooms </label>
+      <input type="text" class="form-control" name="no_of_rooms" [(ngModel)]="requestdata.no_of_rooms	">
+    </div>
+
+    <div class="form-group">
+      <label>No Of Member</label>
+      <input type="text" class="form-control" name="no_of_member" [(ngModel)]="requestdata.no_of_member">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+
+
+  </form>
+</div>

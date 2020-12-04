@@ -1,0 +1,53 @@
+
+.star {
+    font-size: 1.5rem;
+    color: #b0c4de;
+  }
+  .filled {
+    color: #1e90ff;
+  }
+  .bad {
+    color: #deb0b0;
+  }
+  .filled.bad {
+    color: #ff1e1e;
+  }
+
+/*=========== Start facilities_area css =============*/
+.facilities_area{
+    position: relative;
+    z-index: 1;
+    background: #04091e;
+    overflow: hidden;
+    .bg-parallax{
+        background: url("../../assets/facilites_bg.jpg") no-repeat scroll center 0 / cover;
+        opacity: 0.15;
+    }
+}
+.facilities_item{
+    border:1px solid #777777;
+    border-radius: 10px;
+    background-color: rgba(249, 249, 255, 0.102);
+    padding: 31px 40px 37px;
+    color: #fff;
+    margin-bottom: 30px;
+    .sec_h4{
+        padding-bottom: 18px;
+        color: #fff;
+        i{
+            color: yellow;
+            font-size: 24px;
+            line-height: 38px;
+            display: inline-block;
+            vertical-align: bottom;
+            padding-right: 20px;
+        }
+    }
+    p{
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0px;
+    }
+}
+/*=========== End facilities_area css =============*/
+

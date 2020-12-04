@@ -1,0 +1,83 @@
+<div class="container" *ngIf="getalldata.length > 0;else emptyBooking">
+    <div class="sk-folding-cube" *ngIf=showSpinner >
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+  <article class="card">
+    <header class="card-header"> My Room Booking / Tracking </header>
+    <div class="card-body" *ngFor="let item of getalldata">
+      <h3>Order ID: {{item.id}}</h3>
+      <article class="card">
+        <div class="card-body row">
+          <div class="col"> <strong>Room Booking Request:</strong> <br>{{item.created_at | date:'dd-MM-yyyy HH:mm:ss'}}
+          </div>
+          <div class="col"> <strong>Created BY:</strong> <br> <i class="fa fa-user"></i> {{item.name}} </div>
+          <div class="col"> <strong>Status:</strong> <br> {{item.statusBooking}} </div>
+          <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+        </div>
+      </article>
+      <div class="track" *ngIf="getstatus==item.statusBooking ; else pending ">
+        <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Booking
+            confirmed</span> </div>
+      </div>
+      <ng-template #pending>
+        <div class="tracks">
+          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Booking
+              Pending</span> </div>
+        </div>
+      </ng-template>
+      <a (click)="cancelBookingRequest(item.id)" class="btn btn-warning" data-abc="true"> <i class="fa fa-trash"></i>
+        Cancel Booking</a>
+        <a routerLink="/editbooking/{{item.id}}"class="btn btn-info" style="margin: 0 0 0 10px;" data-abc="true"> <i class="fa fa-trash"></i>
+            Edit Booking</a>
+      <hr>
+      <ul class="row">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Customer Name</th>
+              <th scope="col">Customer Email</th>
+              <th scope="col">Customer Mobile No</th>
+              <th scope="col"> Members</th>
+              <th scope="col">Rooms</th>
+              <th scope="col">Room Type</th>
+              <th scope="col">From Date</th>
+              <th scope="col">To Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{item.name}}</th>
+              <td>{{item.email}}</td>
+              <td>{{item.mobile_no}}</td>
+              <td>{{item.no_of_member}}</td>
+              <td>{{item.no_of_rooms}}</td>
+              <td>{{item.room_type}}</td>
+              <td>{{item.from_date | date:'dd-MM-yyyy'}}</td>
+              <td>{{item.to_date | date:'dd-MM-yyyy'}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+        <li class="col-md-4">
+        </li>
+      </ul>
+      <hr>
+    </div>
+    <a routerLink="/room-booking-request" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i>
+      Back to Booking Request</a>
+  </article>
+</div>
+
+<ng-template #emptyBooking>
+  <!-- <h1 *ngIf="!showSpinner" class="d-flex justify-content-center">User Not Found</h1> -->
+  <div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div>
+  <h1 class="d-flex justify-content-center">Not Booking Found</h1>
+</ng-template>

@@ -1,0 +1,154 @@
+<div class="">
+  <section class="banner_area">
+    <div class="booking_table d_flex align-items-center">
+      <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+<div class="container">
+  <div class="banner_content text-center">
+    <h6>Away from monotonous life</h6>
+    <h2>Relax Your Mind</h2>
+    <p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
+   
+  </div>
+</div>
+    </div>
+</section>
+
+  <section class="accomodation_area section_gap">
+    <div class="container">
+        <div class="section_title text-center">
+            <h2 class="title_color">Hotel Accomodation</h2>
+            <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
+        </div>
+        <div class="row mb_30">
+            <div class="col-lg-3 col-sm-6">
+                <div class="accomodation_item text-center">
+                    <div class="hotel_img">
+                        <img src="../../assets/room1.jpg" alt="">
+                        <a routerLink="/room-booking-request" class="btn theme_btn button_hover">Book Now</a>
+                    </div>
+                    <a routerLink="/room-booking-request"><h4 class="sec_h4">Double Deluxe Room</h4></a>
+                    <h5>$250<small>/night</small></h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="accomodation_item text-center">
+                    <div class="hotel_img">
+                        <img src="../../assets/room2.jpg" alt="">
+                        <a routerLink="/room-booking-request" class="btn theme_btn button_hover">Book Now</a>
+                    </div>
+                    <a routerLink="/room-booking-request"><h4 class="sec_h4">Single Deluxe Room</h4></a>
+                    <h5>$200<small>/night</small></h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="accomodation_item text-center">
+                    <div class="hotel_img">
+                        <img src="../../assets/room3.jpg" alt="">
+                        <a routerLink="/room-booking-request" class="btn theme_btn button_hover">Book Now</a>
+                    </div>
+                    <a routerLink="/room-booking-request"><h4 class="sec_h4">Honeymoon Suit</h4></a>
+                    <h5>$750<small>/night</small></h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="accomodation_item text-center">
+                    <div class="hotel_img">
+                        <img src="../../assets/room4.jpg" alt="">
+                        <a routerLink="/room-booking-request" class="btn theme_btn button_hover">Book Now</a>
+                    </div>
+                    <a routerLink="/room-booking-request"><h4 class="sec_h4">Economy Double</h4></a>
+                    <h5>$200<small>/night</small></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <div class="container">
+    <div class="row mt-4" *ngIf="getallservice">
+      <div class="col-3" *ngFor="let item of getallservice">
+        <div class="service_block">
+          <div class="service_image">
+            <img src="https://via.placeholder.com/50" alt="image">
+          </div>
+          <div class="service_title">
+            <h5>{{item.title}}</h5>
+          </div>
+          <div class="service_description">
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-sm-6">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.7553145456345!2d75.7629231144451!3d23.179128916276408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396375255b13bac9%3A0xb240786696dde6ed!2smy%20project%20hd!5e0!3m2!1sen!2sin!4v1587295364997!5m2!1sen!2sin"
+          width="500" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
+      </div>
+      <!------------------------------ contact Form--------------------------------------- -->
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4 class="text-center">Contact Form</h4>
+          </div>
+          <div class="col-sm-12">
+            <form [formGroup]="contactForm" (ngSubmit)="save_contact_form()">
+              <!------------------------------Name Feild--------------------------------------- -->
+              <div class="form-group">
+                <label>Enter Name</label>
+                <input type="text" formControlName="name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.name.errors }" placeholder="Enter Name Here"
+                  class="form-control" pInputText>
+                <div *ngIf="submitted && myForm.name.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.name.errors.required">Name is required</div>
+                </div>
+              </div>
+
+              <!------------------------------Email Feild--------------------------------------- -->
+              <div class="form-group">
+                <label>Enter E-Mail</label>
+                <input type="text" formControlName="email" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.email.errors }" placeholder="Enter Email Here"
+                  class="form-control" pInputText>
+                <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.email.errors.required">Email is required</div>
+                </div>
+              </div>
+
+              <!------------------------------ Mobile Feild--------------------------------------- -->
+              <div class="form-group">
+                <label>Enter Mobile No</label>
+                <input type="text" formControlName="mobile_no" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.mobile_no.errors }" placeholder="Enter Mobile No Here"
+                  class="form-control" pInputText>
+                <div *ngIf="submitted && myForm.mobile_no.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.mobile_no.errors.required">Mobile_no is required</div>
+                </div>
+              </div>
+
+              <!------------------------------Message Feild--------------------------------------- -->
+              <div class="form-group">
+                <label>Enter Message</label>
+                <textarea formControlName="message" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.message.errors }" placeholder="Enter Message Here"
+                  class="form-control" pInputText></textarea>
+                <div *ngIf="submitted && myForm.message.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.message.errors.required">Name is required</div>
+                </div>
+              </div>
+
+
+              <!------------------------------ Submit Buttone--------------------------------------- -->
+              <div class="form-group">
+                <button class="btn btn-info">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

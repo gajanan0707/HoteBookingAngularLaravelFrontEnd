@@ -1,0 +1,123 @@
+<div class="container">
+  <form [formGroup]="booking_request_from" (ngSubmit)="booking_request(booking_request_from)">
+    <div class="row request_container">
+      <div class="col-sm-12 text-center">
+        <h3>Room Booking Request</h3>
+      </div>
+      <div class="row heading_block">
+        <div class="col-sm-12 mb-4">
+          <h2><u>Contact Information</u></h2>
+        </div>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>Enter Name</label>
+                <input type="text" formControlName="name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.name.errors }" placeholder="Enter Name">
+                <div *ngIf="submitted && myForm.name.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.name.errors.required">Name is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>Enter Email</label>
+                <input type="text" formControlName="email" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.email.errors }" placeholder="Enter Email">
+                <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.email.errors.required">Email is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>Enter Mobile No</label>
+                <input type="text" formControlName="mobile_no" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.mobile_no.errors }" placeholder="Enter Mobile No">
+                <div *ngIf="submitted && myForm.mobile_no.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.mobile_no.errors.required">Mobile_no is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Enter Address</label>
+                <textarea formControlName="address" [ngClass]="{ 'is-invalid': submitted && myForm.address.errors }"
+                  class="form-control"></textarea>
+                <div *ngIf="submitted && myForm.address.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.address.errors.required">Address is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-12 mb-4">
+          <h2><u>Booking Information</u></h2>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>From Date</label>
+            <input type="date" formControlName="from_date"
+              [ngClass]="{ 'is-invalid': submitted && myForm.from_date.errors }" class="form-control">
+            <div *ngIf="submitted && myForm.from_date.errors" class="invalid-feedback">
+              <div *ngIf="myForm.from_date.errors.required">From Date is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>From To</label>
+            <input type="date" formControlName="to_date"
+              [ngClass]="{ 'is-invalid': submitted && myForm.to_date.errors }" class="form-control">
+            <div *ngIf="submitted && myForm.to_date.errors" class="invalid-feedback">
+              <div *ngIf="myForm.to_date.errors.required">To Date  is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>No Of Member</label>
+            <input type="text" formControlName="no_of_member" class="form-control">
+            <div *ngIf="submitted && myForm.no_of_member.errors"
+              [ngClass]="{ 'is-invalid': submitted && myForm.no_of_member.errors }" class="invalid-feedback">
+              <div *ngIf="myForm.no_of_member.errors.required">No of Member is required</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>No Of Room</label>
+            <input type="text" formControlName="no_of_rooms"
+              [ngClass]="{ 'is-invalid': submitted && myForm.no_of_rooms.errors }" class="form-control">
+            <div *ngIf="submitted && myForm.no_of_rooms.errors" class="invalid-feedback">
+              <div *ngIf="myForm.no_of_rooms.errors.required">no_of_rooms is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Room Type</label>
+            <select class="form-control" formControlName="room_type">
+              <option value="">Select</option>
+              <option *ngFor="let type of room_type" value="{{type.id}}">{{type.titile}}</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-info">Send Request</button>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>

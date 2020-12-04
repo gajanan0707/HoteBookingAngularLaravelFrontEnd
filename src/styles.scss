@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+
+
+.toast-container .ngx-toastr {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 6px;
+    padding: 15px 15px 15px 50px;
+    width: 300px;
+    border-radius: 15px !important;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    box-shadow: 0 0 12px #999;
+    color: #fff;
+    border-image-source: linear-gradient(to right, #FFD54F, #D500F9) !important;
+    border: 4px solid rgb(5, 245, 5) !important;
+    border-image-source: linear-gradient(to right, #FFD54F, #D500F9) !important;
+    border-image-slice: 20 !important;
+}
+
+.toast-success {
+    background-color: #0fe90f;
+}
+
+
+
+
+/*============ About page css ============*/
+.testimonial_area{
+    background: #f9f9ff;
+}
+.testimonial_slider{
+    .testimonial_item{
+        border: 1px solid #eeeeee;
+        background: #fff;
+        padding: 40px;
+        img{
+            width: auto;
+            margin-right: 30px;
+        }
+        p{
+            color: #8c8d9e;
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0px;
+            padding-bottom: 15px;
+        }
+        .sec_h4{
+            line-height: 30px;
+            transition: all 0.3s linear;
+            &:hover{
+                color: light_blue;
+            }
+        }
+        .star{
+            a{
+                color: yellow;
+                font-size: 14px;
+            }
+        }
+    }
+    .owl-dots{
+        text-align: center;
+        margin-top: 80px;
+        .owl-dot{
+            width: 14px;
+            height: 14px;
+            background: #eeeeee;
+            display: inline-block;
+            margin: 0px 5px;
+            transition: all 0.3s linear;
+            &.active{
+                background: yellow;
+            }
+        }
+    }
+}
+
+
+/*============= Start home page image css =============*/
+.banner_area{
+    background: #04091e;
+    
+	position: relative;
+    z-index: 1;
+    .bg-parallax{
+        background: url("assets/banner_bg.jpg") no-repeat scroll center 0 / cover;
+        opacity: 0.50;
+    }
+    .position{
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+}
+.booking_table{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	min-height: 800px;
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 125%;
+    bottom: 0;
+    z-index: -1;
+}
+.banner_content{
+    color: #fff;
+    margin-bottom: 94px;
+    h6{
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        font-weight: 400;
+    }
+    h2{
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 700;
+    }
+    p{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 10px 0px 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

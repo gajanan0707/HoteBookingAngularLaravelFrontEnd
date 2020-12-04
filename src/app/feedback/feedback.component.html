@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="feedback_form" (submit)="savefeedback()">
+      <div class="col-sm-12">
+        <div class="feed_bakfrom">
+          <div class="row">
+
+            <div class="col-sm-12 mb-4">
+              <h2 class="text-primary">Send Feedback</h2>
+            </div>
+
+            <!---------------------- Name Feild --------------------------------------->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Enter Name</label>
+                <input type="text" formControlName="name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.name.errors }" placeholder="Enter Name Here"
+                  class="form-control" pInputText>
+                <div *ngIf="submitted && myForm.name.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.name.errors.required">Name is required</div>
+                </div>
+              </div>
+            </div>
+
+            <!---------------------- Email Feild --------------------------------------->
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Enter Email</label>
+                <input type="text" formControlName="email" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.email.errors }" placeholder="Enter Email Here"
+                  class="form-control" pInputText>
+                <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.email.errors.required">Email is required</div>
+                </div>
+              </div>
+            </div>
+
+            <!---------------------- Mobile Feild --------------------------------------->
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Enter Mobile No</label>
+                <input type="text" formControlName="mobile_no" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.mobile_no.errors }" placeholder="Enter Mobile No Here"
+                  class="form-control" pInputText>
+                <div *ngIf="submitted && myForm.mobile_no.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.mobile_no.errors.required">Mobile_no is required</div>
+                </div>
+              </div>
+            </div>
+
+            <!---------------------- Feedbakc Type Feild --------------------------------------->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Feedback Type</label>
+                <select class="form-control" formControlName="feedback_type">
+                  <option value="">Select</option>
+                  <option *ngFor="let type of feedback_type" value="{{type.id}}">{{type.title}}</option>
+                </select>
+              </div>
+            </div>
+
+            <!---------------------- Message Feild --------------------------------------->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Message</label>
+                <textarea formControlName="message" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && myForm.message.errors }" placeholder="Enter Message Here"
+                  class="form-control" pInputText></textarea>
+                <div *ngIf="submitted && myForm.message.errors" class="invalid-feedback">
+                  <div *ngIf="myForm.message.errors.required">Message is required</div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="cont">
+              <div class="stars">
+                <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
+              </div>
+            </div>
+            <!-- <div>Rating: {{feedback_form.value.rating}}</div> -->
+            <!---------------------- Send Button --------------------------------------->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <button class="btn btn-primary btn-block">Send</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

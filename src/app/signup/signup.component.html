@@ -1,0 +1,86 @@
+<div class="row" style="margin-top: 5%;">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="container" style="background-color: white;">
+
+      <!----------------------Image Feild-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <img class="img-thumbnail" id="AddEmpImage" style="width: 100px; height: 100px; margin-top: 20px;"
+            src="assets/images/user-icon.png" alt="">
+          <input id="image" type="file" style=" margin-left: 10px; visibility:hidden;" (change)="onSelect($event)"
+            accept='image/*'>
+        </div>
+        <div class="col-md-4"></div>
+
+      </div>
+
+      <!----------------------Name Feild-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <input id="name" class="form-control" placeholder="Name...."
+            style="border: none; border-bottom: solid lightgray 1px;">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <!----------------------Mobile Feild-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <input id="mobile" class="form-control" placeholder="Mobile...."
+            style="border: none; border-bottom: solid lightgray 1px;">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <!----------------------Email Feild-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <input id="email" class="form-control" placeholder="Email...."
+            style="border: none; border-bottom: solid lightgray 1px;">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <!----------------------Password Feild-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <input id="pass" type="password" class="form-control" placeholder="Password...."
+            style="border: none; border-bottom: solid lightgray 1px;">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <!----------------------Confirm Password Feild-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <input id="cpass" type="password" class="form-control" placeholder="Confirm Password...."
+            style="border: none; border-bottom: solid lightgray 1px;">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <br>
+
+      <!----------------------Submit buttone-------------------------------------------------------->
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <button class="form-control" (click)="onSubmit()">Register</button>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <br>
+      <br>
+      <br>
+    </div>
+
+  </div>
+
+  <div class="col-md-4"></div>
+</div>
