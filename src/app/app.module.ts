@@ -20,6 +20,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookingStatusComponent } from './booking-status/booking-status.component';
 import { EditBookingRequestComponent } from './edit-booking-request/edit-booking-request.component';
+import { AvatarModule } from 'ngx-avatar';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { EditBookingRequestComponent } from './edit-booking-request/edit-booking
     ToastrModule.forRoot(),
     NgxStarRatingModule,
     NgbModule,
+    AvatarModule,
+    CommonModule
   
     
   ],

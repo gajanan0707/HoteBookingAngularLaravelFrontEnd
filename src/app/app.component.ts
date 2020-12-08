@@ -16,14 +16,14 @@ export class AppComponent {
   isLogin:any
   submitted = false
   user:any
+  getusername:any=[]
   constructor(public fb: FormBuilder, private http: HttpClient, 
     private toastr: ToastrService, private dataservice: DataService,private route:Router,private authserivce:AuthService) {
   }
 
   ngOnInit(): void {
     this.isLogin=localStorage.getItem("signinUser")
-    
-
+    this.getusername=JSON.parse(localStorage.getItem("signinUser")|| '{}').name
   }
 
    //------------------Create contactForm Form--------------------------------

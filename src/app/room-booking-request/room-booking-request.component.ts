@@ -27,8 +27,7 @@ export class RoomBookingRequestComponent implements OnInit {
       this.room_type = resp1[2]
     })
     this.loginuser=JSON.parse(localStorage.getItem("signinUser")|| '{}').id
-  
-    console.log(this.loginuser)
+
   }
 
     booking_request_from = new FormGroup({

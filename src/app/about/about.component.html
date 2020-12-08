@@ -79,7 +79,8 @@
     </div>
     <div class="testimonial_slider owl-carousel" *ngFor="let item of getserivce">
       <div class="media testimonial_item">
-        <img class="rounded-circle" src="../../assets/testtimonial-1.jpg" alt="">
+        <!-- <img class="rounded-circle" src="../../assets/testtimonial-1.jpg" alt=""> -->
+        <ngx-avatar  class="rounded-circle"  name={{getusername}}></ngx-avatar>
         <div class="media-body">
           <p>{{item.message}} </p>
           <a href="#">
